@@ -1,0 +1,83 @@
+<diagram name="Level 0 - Secure Architecture" id="level0">
+    <mxGraphModel dx="1955" dy="895" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="heading" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontStyle=1;fontSize=24;fontColor=#0F172A;align=left;" value="LEVEL 0 — SECURE ARCHITECTURE / SYSTEM CONTEXT" vertex="1">
+          <mxGeometry height="42" width="1150" x="60" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="manager" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F2FF;strokeColor=#3974C6;strokeWidth=2;fontColor=#1E3A5F;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" value="Manager" vertex="1">
+          <mxGeometry height="65" width="190" x="70" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="member" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F2FF;strokeColor=#3974C6;strokeWidth=2;fontColor=#1E3A5F;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" value="Team Member" vertex="1">
+          <mxGeometry height="65" width="190" x="70" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F2FF;strokeColor=#3974C6;strokeWidth=2;fontColor=#1E3A5F;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" value="System Administrator" vertex="1">
+          <mxGeometry height="65" width="190" x="70" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#64748b;strokeWidth=2;dashed=1;dashPattern=7 5;fontSize=15;fontColor=#334155;verticalAlign=top;align=center;spacingTop=9;" value="APPLICATION TRUST BOUNDARY" vertex="1">
+          <mxGeometry height="515" width="395" x="485" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="application" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=2;fontColor=#14532D;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;" value="Secure Delivery Defect &amp;amp;&lt;br&gt;Station Performance Dashboard" vertex="1">
+          <mxGeometry height="120" width="300" x="532" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#64748b;strokeWidth=2;dashed=1;dashPattern=7 5;fontSize=15;fontColor=#334155;verticalAlign=top;align=center;spacingTop=9;" value="DATABASE TRUST BOUNDARY" vertex="1">
+          <mxGeometry height="240" width="300" x="930" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="database" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=15;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#4C1D95;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;" value="SQLite Database&lt;br&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Accounts, password hashes, roles,&lt;br&gt;routes, defects, audit logs&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="220" x="970" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="adminzone" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=4 4;strokeColor=#B45309;strokeWidth=2;fillColor=#FFFBEB;fontSize=13;fontColor=#92400E;align=center;verticalAlign=middle;" value="ADMINISTRATIVE PRIVILEGE BOUNDARY&lt;br&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Backend RBAC checks required&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82" width="200" x="970" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=15;fontColor=#334155;align=left;verticalAlign=middle;spacingLeft=18;spacingRight=12;" value="&lt;b&gt;SECURITY LEGEND&lt;/b&gt;&lt;br&gt;&lt;b&gt;Protected assets:&lt;/b&gt; accounts, password hashes, permissions, route/defect records, audit logs&lt;br&gt;&lt;b&gt;Attack surfaces:&lt;/b&gt; login, data-entry forms, administrative actions, database queries&lt;br&gt;&lt;b&gt;Trust crossings:&lt;/b&gt; users → app, administrator privilege check, app → database&lt;br&gt;&lt;b&gt;External integrations:&lt;/b&gt; none planned; fictional data only" vertex="1">
+          <mxGeometry height="145" width="1150" x="68" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="m_in" edge="1" parent="1" source="manager" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.12;entryDx=0;entryDy=0;" target="application" value="Login / record updates / queries">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="355" y="150" />
+              <mxPoint x="355" y="284" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m_out" edge="1" parent="1" source="application" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.28;exitDx=0;exitDy=0;entryX=1;entryY=0.72;entryDx=0;entryDy=0;" target="manager" value="Reports / performance metrics">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="445" y="304" />
+              <mxPoint x="445" y="192" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_in" edge="1" parent="1" source="member" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.41;entryDx=0;entryDy=0;" target="application" value="Login / approved data entry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_out" edge="1" parent="1" source="application" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.58;exitDx=0;exitDy=0;entryX=1;entryY=0.77;entryDx=0;entryDy=0;" target="member" value="Authorized performance views">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_in" edge="1" parent="1" source="admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.82;entryDx=0;entryDy=0;" target="application" value="Login / account + role changes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="478" />
+              <mxPoint x="510" y="478" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_out" edge="1" parent="1" source="application" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.94;exitDx=0;exitDy=0;entryX=1;entryY=0.81;entryDx=0;entryDy=0;" target="admin" value="Account + audit results">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="563" />
+              <mxPoint x="285" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db_in" edge="1" parent="1" source="application" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.32;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;" target="database" value="Authorized queries + writes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="db_out" edge="1" parent="1" source="database" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#475569;fontColor=#334155;fontSize=13;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.72;entryDx=0;entryDy=0;" target="application" value="Stored records + query results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
