@@ -1,0 +1,215 @@
+<diagram name="Level 1 - Clean Layout" id="level1clean">
+    <mxGraphModel dx="2324" dy="1065" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="shape=rect;fillColor=#FFFFFF;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1500" width="2200" as="geometry" />
+        </mxCell>
+        <mxCell id="heading" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=24;fontStyle=1;align=left;" value="LEVEL 1 — SECURE ARCHITECTURE / INTERNAL DATA FLOWS" vertex="1">
+          <mxGeometry height="35" width="900" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=14;align=left;" value="Planned Python / Flask / SQLite implementation for the Secure Delivery Defect and Station Performance Dashboard" vertex="1">
+          <mxGeometry height="24" width="1200" x="40" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tb1" parent="1" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#94A3B8;strokeWidth=2;dashed=1;dashPattern=7 5;fontSize=15;fontStyle=1;fontColor=#475569;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;" value="TB-1  USER / BROWSER (UNTRUSTED)" vertex="1">
+          <mxGeometry height="560" width="300" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tb2" parent="1" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#94A3B8;strokeWidth=2;dashed=1;dashPattern=7 5;fontSize=15;fontStyle=1;fontColor=#475569;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;" value="TB-2  APPLICATION / FLASK SERVER" vertex="1">
+          <mxGeometry height="560" width="1250" x="370" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tb3" parent="1" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#94A3B8;strokeWidth=2;dashed=1;dashPattern=7 5;fontSize=15;fontStyle=1;fontColor=#475569;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;" value="TB-3  RESTRICTED DATA STORAGE" vertex="1">
+          <mxGeometry height="560" width="470" x="1650" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#E8F1FF;strokeColor=#3B82F6;strokeWidth=2;fontColor=#1E3A5F;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Manager Team Member System Administrator" vertex="1">
+          <mxGeometry height="95" width="240" x="70" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#E8F1FF;strokeColor=#3B82F6;strokeWidth=2;fontColor=#1E3A5F;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Browser UI HTML / CSS dashboard" vertex="1">
+          <mxGeometry height="90" width="240" x="70" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=2;fontColor=#0C4A6E;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Flask API / Controller SR-07 rate limiting SR-09 generic errors C-06 HTTPS / TLS Threats: T-01, T-06, T-08" vertex="1">
+          <mxGeometry height="120" width="240" x="420" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontColor=#7C2D12;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Authentication + Sessions SR-01, SR-02, SR-08 password hashes • idle timeout failed-login lockout Threats: T-01, T-05" vertex="1">
+          <mxGeometry height="120" width="250" x="735" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="rbac" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontColor=#7C2D12;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="RBAC + Record Authorization SR-03, SR-06 manager / member / admin checks Threats: T-02, T-04, T-10" vertex="1">
+          <mxGeometry height="120" width="250" x="1060" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="validation" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontColor=#7C2D12;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Input Validation SR-04 field rules • bounds • parameterized SQL Threat: T-03" vertex="1">
+          <mxGeometry height="105" width="250" x="735" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="services" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#14532D;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Business / Reporting Services authorized route + defect CRUD filters and reports Threats: T-02, T-04, T-10" vertex="1">
+          <mxGeometry height="120" width="250" x="1060" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="logging" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=2;fontColor=#0C4A6E;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Audit / Security Logging SR-05, SR-09 logins • edits • deletes • admin actions Threats: T-04, T-07, T-08" vertex="1">
+          <mxGeometry height="105" width="250" x="735" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="files" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=2;fontColor=#0C4A6E;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Restricted Local File Storage + Safe Exports C-07 export access checks no production integrations Threats: T-09, T-10" vertex="1">
+          <mxGeometry height="110" width="250" x="1060" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;boundedLbl=1;size=16;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#4C1D95;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="SQLite Protected Database accounts • password hashes • roles routes • defects • audit links restricted access • encryption at rest if deployed" vertex="1">
+          <mxGeometry height="145" width="330" x="1720" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="audit" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontColor=#4C1D95;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" value="Protected Audit Log Store SR-05 restricted append / read limited alteration access Threat: T-07" vertex="1">
+          <mxGeometry height="105" width="330" x="1720" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_boundary" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#F97316;strokeWidth=2;dashed=1;fontColor=#9A3412;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ADMINISTRATIVE PRIVILEGE BOUNDARY Backend RBAC checks required for admin actions" vertex="1">
+          <mxGeometry height="70" width="310" x="1730" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="browser" value="Role-specific use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="285" />
+              <mxPoint x="190" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="gateway" value="Requests / secure session cookies">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="385" />
+              <mxPoint x="390" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="browser" value="Authorized views / safe errors">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="430" />
+              <mxPoint x="325" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="auth" value="Login + session verification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="675" y="215" />
+              <mxPoint x="720" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="rbac" value="Authenticated identity / role">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="215" />
+              <mxPoint x="1045" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="validation" value="Submitted route / defect fields">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="285" />
+              <mxPoint x="545" y="402" />
+              <mxPoint x="720" y="402" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="validation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="services" value="Validated request values">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="402" />
+              <mxPoint x="1045" y="402" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="rbac" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="services" value="Allow / deny operation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="285" />
+              <mxPoint x="1185" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="services" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="db" value="Authorized SQL queries + writes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1325" y="400" />
+              <mxPoint x="1400" y="400" />
+              <mxPoint x="1400" y="252" />
+              <mxPoint x="1710" y="252" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="services" value="Query results / records">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1710" y="290" />
+              <mxPoint x="1420" y="290" />
+              <mxPoint x="1420" y="435" />
+              <mxPoint x="1325" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="logging" value="Authentication and request events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="285" />
+              <mxPoint x="470" y="570" />
+              <mxPoint x="720" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="services" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="logging" value="Change / delete / admin events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1045" y="445" />
+              <mxPoint x="1000" y="445" />
+              <mxPoint x="1000" y="595" />
+              <mxPoint x="995" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="logging" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="audit" value="Append protected audit events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="570" />
+              <mxPoint x="1400" y="570" />
+              <mxPoint x="1400" y="483" />
+              <mxPoint x="1705" y="483" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="services" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontColor=#334155;fontSize=12;labelBackgroundColor=#FFFFFF;" target="files" value="Generated reports / safe assets">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="465" />
+              <mxPoint x="1185" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rule" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="TRUST-BOUNDARY RULE: Requests crossing TB-1 → TB-2 should be authenticated as needed, authorized for the requested action, validated, and logged when appropriate. TB-2 → TB-3 access occurs only through backend services." vertex="1">
+          <mxGeometry height="70" width="2080" x="40" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=18;fontStyle=1;align=left;" value="SECURITY REQUIREMENTS / CONTROLS" vertex="1">
+          <mxGeometry height="24" width="500" x="40" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="SR-01 authentication SR-02 password hashing SR-03 RBAC SR-04 input validation SR-05 audit logging SR-06 record authorization SR-07 login rate limits / lockout SR-08 session expiry SR-09 generic errors + secure diagnostics SR-10 security testing (development / verification activity)" vertex="1">
+          <mxGeometry height="240" width="520" x="40" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="assets" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="PROTECTED ASSETS • user accounts • password hashes • roles and permissions • route and defect records • audit logs" vertex="1">
+          <mxGeometry height="160" width="340" x="590" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="attacks" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="ATTACK SURFACES • login • dashboard forms • admin functions • API endpoints • database access • export features" vertex="1">
+          <mxGeometry height="160" width="340" x="960" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="external" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="EXTERNAL SYSTEMS None planned. The project uses fictional data only and does not connect to Amazon production systems." vertex="1">
+          <mxGeometry height="120" width="420" x="1330" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="mapping_title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontColor=#0F172A;fontSize=18;fontStyle=1;align=left;" value="THREAT TRACEABILITY" vertex="1">
+          <mxGeometry height="24" width="300" x="40" y="1095" as="geometry" />
+        </mxCell>
+        <mxCell id="mapping" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;fontColor=#334155;fontSize=14;align=left;verticalAlign=middle;spacingLeft=16;spacingRight=14;" value="T-01 spoofing → authentication, password hashing, and rate limiting reduce credential attacks. T-02 privilege escalation → server-side RBAC blocks elevated actions. T-03 malicious input → validation and parameterized SQL block unsafe input. T-04 record tampering → authorization + audit logging reduce unauthorized changes and improve detection. T-05 session hijacking → session expiry + secure cookies lower reuse risk. T-06 overload / abuse → API throttling reduces excessive-request volume. T-07 audit manipulation → protected logging limits undetected changes. T-08 error disclosure → generic error responses hide internals. T-09 storage exposure → restricted storage and deployment encryption reduce exposure. T-10 report disclosure → export authorization limits access." vertex="1">
+          <mxGeometry height="170" width="2080" x="40" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="testing" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=2;fontColor=#065F46;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=16;" value="SR-10 • PRE-RELEASE SECURITY VERIFICATION: Test login, role authorization, invalid input handling, session expiry, rate limiting, logging, TLS, and export access; verify mitigations for T-01 through T-10." vertex="1">
+          <mxGeometry height="50" width="2080" x="40" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="caption" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=14;align=left;" value="Figure 2. Level 1 secure architecture showing planned Flask components, trust zones, labeled data flows, security requirements SR-01–SR-10, and related threat IDs." vertex="1">
+          <mxGeometry height="24" width="1400" x="40" y="1385" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

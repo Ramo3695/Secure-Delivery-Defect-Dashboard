@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Delivery Performance Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        h1 { color: #1e293b; }
+        .info {
+            padding: 15px;
+            background: #eff6ff;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Delivery Performance Dashboard</h1>
+
+        <div class="info">
+            <p>Welcome, <strong>{{ username }}</strong>!</p>
+            <p>Your role: <strong>{{ role }}</strong></p>
+        </div>
+
+        <h2>Station Performance</h2>
+        <p>
+            This dashboard will display fictional
+            delivery routes and defect records.
+        </p>
+
+
+{% if role in ["manager", "admin"] %}
+    <p>
+        <a href="{{ url_for('manage_records') }}">
+            Add Delivery Record
+        </a>
+    </p>
+{% endif %}
+
+<h2>Delivery Records</h2>
+
+<table border="1" cellpadding="10"
+       style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th>Route ID</th>
+        <th>Zone</th>
+        <th>Defects</th>
+        <th>Date</th>
+    </tr>
+
+    {% for record in records %}
+    <tr>
+        <td>{{ record.route_id }}</td>
+        <td>{{ record.zone }}</td>
+        <td>{{ record.defect_count }}</td>
+        <td>{{ record.route_date }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="4">No delivery records yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+       <form action="{{ url_for('logout') }}" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <button type="submit">Log Out</button>
+</form>
+    </div>
+</body>
+</html>

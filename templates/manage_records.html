@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>Add Delivery Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 40px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        label {
+            display: block;
+            margin-top: 16px;
+        }
+        input, select, button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 6px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-top: 24px;
+        }
+        .error { color: #b91c1c; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Add Delivery Record</h1>
+
+    {% if error %}
+        <p class="error" role="alert">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="route_id">Route ID</label>
+        <input id="route_id" name="route_id"
+               maxlength="20" required>
+
+        <label for="zone">Zone</label>
+        <select id="zone" name="zone" required>
+            <option value="">Select a zone</option>
+            <option value="A">Zone A</option>
+            <option value="B">Zone B</option>
+            <option value="C">Zone C</option>
+            <option value="D">Zone D</option>
+        </select>
+
+        <label for="defect_count">Defect Count</label>
+        <input id="defect_count" name="defect_count"
+               type="number" min="0" max="1000" required>
+
+        <label for="route_date">Route Date</label>
+        <input id="route_date" name="route_date"
+               type="date" required>
+
+        <button type="submit">Save Record</button>
+    </form>
+
+    <p><a href="{{ url_for('dashboard') }}">
+        Return to Dashboard
+    </a></p>
+</div>
+</body>
+</html>
