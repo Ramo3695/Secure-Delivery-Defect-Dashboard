@@ -2,6 +2,7 @@ import os
 import time
 from datetime import date
 from functools import wraps
+import sqlite3
 
 from dotenv import load_dotenv
 from flask import (
@@ -21,6 +22,7 @@ from models import (
     initialize_database,
     initialize_delivery_records,
     verify_user,
+    create_user,
     create_delivery_record,
     get_delivery_records,
     get_user_by_id,
@@ -57,7 +59,7 @@ limiter = Limiter(
 )
 
 # SR-08: Inactivity timeout in seconds
-SESSION_TIMEOUT = 15 * 60
+SESSION_TIMEOUT = 1 * 60
 
 initialize_database()
 initialize_delivery_records()
@@ -272,6 +274,35 @@ def admin_panel():
     <a href="/dashboard">Return to Dashboard</a>
     """
 
+# Milestone 4: Administrator-created user accounts
+@app.route("/admin/create-user", methods=["GET", "POST"])
+@login_required
+@role_required("admin")
+def admin_create_user():
+    if request.method == "POST":
+        username = request.form.get("username", "").strip()
+        password = request.form.get("password", "")
+        role = request.form.get("role", "")
+
+        try:
+            create_user(username, password, role)
+        except ValueError:
+            return render_template(
+                "create_user.html",
+                error="Check the username, password, and role."
+            ), 400
+        except sqlite3.IntegrityError:
+            return render_template(
+                "create_user.html",
+                error="That username is unavailable."
+            ), 400
+
+        return render_template(
+            "create_user.html",
+            success="User account created successfully."
+        )
+
+    return render_template("create_user.html")
 
 # SR-09: Safe error messages
 @app.errorhandler(403)
