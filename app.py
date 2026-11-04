@@ -59,7 +59,7 @@ limiter = Limiter(
 )
 
 # SR-08: Inactivity timeout in seconds
-SESSION_TIMEOUT = 1 * 60
+SESSION_TIMEOUT = 15 * 60
 
 initialize_database()
 initialize_delivery_records()
@@ -354,6 +354,24 @@ def logout():
     session.clear()
     return redirect(url_for("home"))
 
+
+@app.after_request
+def add_security_headers(response):
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "script-src 'self'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src 'self' data:; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "form-action 'self'; "
+        "frame-ancestors 'none'"
+    )
+
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+
+    return response
 
 if __name__ == "__main__":
     app.run(debug=False)
