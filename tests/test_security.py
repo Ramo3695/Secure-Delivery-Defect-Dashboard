@@ -105,3 +105,35 @@ def test_admin_can_access_admin_page(client):
     response = client.get("/admin")
 
     assert response.status_code == 200
+
+def test_application_error_is_logged(client, monkeypatch):
+    from flask import render_template
+    import app as application_module
+
+    captured_events = []
+
+    def capture_event(event_type, outcome, role="unknown"):
+        captured_events.append(
+            (event_type, outcome, role)
+        )
+
+    monkeypatch.setattr(
+        application_module,
+        "log_security_event",
+        capture_event,
+    )
+
+    with client.application.test_request_context(
+        "/dashboard"
+    ):
+        response = application_module.internal_server_error(
+            Exception("Simulated application error")
+        )
+
+    assert response[1] == 500
+
+    assert (
+        "application_error",
+        "failure",
+        "unknown",
+    ) in captured_events

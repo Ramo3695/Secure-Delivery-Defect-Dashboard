@@ -4,6 +4,8 @@ from datetime import date
 from functools import wraps
 import sqlite3
 
+from audit_logger import log_security_event
+
 from dotenv import load_dotenv
 from flask import (
     Flask,
@@ -161,6 +163,11 @@ def login():
     user = verify_user(username, password)
 
     if user is None:
+        log_security_event(
+            "authentication",
+            "failure",
+        )
+
         return render_template(
             "login.html",
             error="Invalid username or password.",
@@ -172,6 +179,12 @@ def login():
     session["username"] = user["username"]
     session["role"] = user["role"]
     session["last_activity"] = time.time()
+    
+    log_security_event(
+        "authentication",
+        "success",
+        user["role"],
+    )
 
     return redirect(url_for("dashboard"))
 
@@ -253,9 +266,19 @@ def manage_records():
                     parsed_date.isoformat(),
                     session["user_id"],
                 )
+                log_security_event(
+                     "record_create",
+                        "success",
+                session.get("role", "unknown"),
+                )
 
                 return redirect(url_for("dashboard"))
-
+            
+        log_security_event(
+            "validation_failure",
+            "failure",
+        session.get("role", "unknown"),
+        )
         return render_template(
             "manage_records.html",
             error=error,
@@ -304,9 +327,16 @@ def admin_create_user():
 
     return render_template("create_user.html")
 
+
 # SR-09: Safe error messages
 @app.errorhandler(403)
 def forbidden(error):
+    log_security_event(
+        "authorization_failure",
+        "denied",
+        session.get("role", "unknown"),
+    )
+
     return """
     <h1>403 - Access Denied</h1>
     <p>You do not have permission to access this page.</p>
@@ -332,8 +362,15 @@ def too_many_requests(error):
     )
 
 
+
 @app.errorhandler(500)
 def internal_server_error(error):
+    log_security_event(
+        "application_error",
+        "failure",
+        session.get("role", "unknown"),
+    )
+
     app.logger.error(
         "An internal server error occurred.",
         exc_info=True,
@@ -346,7 +383,6 @@ def internal_server_error(error):
             "Please try again later."
         ),
     ), 500
-
 
 @app.route("/logout", methods=["POST"])
 @login_required
